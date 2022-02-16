@@ -3,11 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <title>RedditInfo</title>
-  <link rel="stylesheet" href="../css/app.css" />
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
   <div class="container">
-    <h1 class="app-title">RedditInfo</h1>
+    <header>
+      <h1 class="app-title">RedditInfo</h1>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Filters</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Choose date</a>
+          <a href="#">Choose number of posts</a>
+          <a href="#">Choose number of comments</a>
+        </div>
+      </div> 
+    </header>
+
+    <script src="./js/app.js"></script>
 
   </div>
 </body>
