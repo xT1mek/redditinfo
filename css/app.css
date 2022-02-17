@@ -1,74 +1,226 @@
-body{
-    background: #545050;
+html {
+    box-sizing: border-box;
 }
 
-.container{
-    background-color: #c23d1f;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 600px;
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
 }
 
-.app-title{
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 30px;
-    padding-top: 29px;
-    letter-spacing: 1px;
-    display: inline-block;
+.app{
+    margin: 0;
+    padding: 0;
+    font: 18px 'Oxygen', Helvetica;
+    background: rgb(185, 170, 170);
+    
 }
 
-  /* Dropdown Button */
-.dropbtn {
-    background-color: brown;
-    color: white;
-    padding: 16px;
+/* Head */
+
+.app__head {
+    background: brown;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 1px 2px 6px 0px #777;
+    position: fixed;
+    width: 100%;
+}
+
+.app_head-banner {
+    text-decoration: none;
+    color: #fff;
+}
+
+h3 {
+    cursor: pointer;
+}
+
+
+/* Head/Dropdown button*/
+
+.app__head-dropbtn {
+    background-color: white;
+    color: brown;
+    padding: 10px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin-left: 400px;
     border-radius: 20px;
     transition: 1s;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px 3px black;
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+.app__head-dropbtn:hover, .app__head-dropbtn:focus {
     background-color: brown;
+    color: white;
+    box-shadow: 0 0 0;
 }
 
-.dropbtn:hover{
+.app__head-dropbtn:hover {
     transform: scale(1.1);
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.app__head-dropdown {
+    margin-left: 250px;
+    margin-top: 8px;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.js-dropdown-content {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #f1f1f1;
-    min-width: 600px;
+    max-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    margin-left: 200px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
+.js-dropdown-content span {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     min-height: 50px;
+    color: brown;
+    min-height: 100px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.js-dropdown-content span:hover {
+    background-color: #ddd;
+    border-radius: 10xp;
+    background-color: brown;
+    color: white;
+}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;} 
+.show {
+    display:block; }
+
+.app__head-date-input {
+    display: flex;
+    margin-top: 15px;
+    border: 0;
+    background-color: inherit;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.app__head-date-input:active, :focus {
+    background-color: brown;
+    color: white;
+    transform: scale(1.1);
+}
+
+.app__head-input-number {
+    width: 40px;
+    background-color: inherit;
+    border: 1px solid brown;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+.app__head-input-number:active {
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+}
+
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.app__head-input-submit {
+    background-color: brown;
+    color: white;
+    border: 0;
+    width: 100px;
+    height: 55px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    margin-left: 75px;
+    box-shadow: 5px 5px 5px white;
+    font-weight: bold;
+}
+
+
+.app__head-input-submit:hover {
+    transform: scale(1.05);
+}
+
+/* Main */
+
+h1 {
+    color: brown;
+    margin-top: 50px;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.app__posts {
+    display: inline-block;
+    padding: 80px 40px;
+    overflow-y: auto;
+    width: 100%; 
+}
+
+.app__posts-block {
+    width: 100%;
+    margin-right: auto;
+    min-height: 800px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.app__posts-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+
+.app__posts-list-el {
+    width: 500px;
+    height: 500px;
+    border: 2px solid brown;
+    box-shadow: 5px 5px 5px brown;
+}
+
+.app__posts-list-el:not(:last-child) {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+
+.app__footer {
+    background: grey;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    position: fixed;
+    top: 90%;
+    width: 100%;
+    padding-top: 25px;
+}
+
+.app__footer-icon {
+    margin-left: auto;
+}
+
+.app__footer-icon:active, :focus {
+    background-color: gray;
+    transform: scale(1);
+}

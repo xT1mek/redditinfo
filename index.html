@@ -1,27 +1,69 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>RedditInfo</title>
-  <link rel="stylesheet" href="./css/app.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/app.css">
+
+    <title>Reddit Info</title>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h1 class="app-title">RedditInfo</h1>
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Filters</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Choose date</a>
-          <a href="#">Choose number of posts</a>
-          <a href="#">Choose number of comments</a>
+
+    <body class="app">
+        <div class="app__head">
+            <h3>
+              <font color="white">▍
+                <a class="app__head-banner">
+                   Reddit Info
+                </a>
+              </font>
+            </h3>
+            <div class="app__head-dropdown">
+              <button onclick="myDropdown()" class="app__head-dropbtn"> 
+                <img src="./img/filter.png" alt="filter" width="15px" height="15px"> Filters
+              </button>
+              <form autocomplete="on" name="filter-form" target="_blank" id="myDropdown" class="js-dropdown-content" onsubmit="addPosts(); return false">
+                <span>
+                  CHOOSE DATE
+                  <input class="app__head-date-input" id="myDate" name="data" type="date" required>
+                 </span>
+                <span>
+                  CHOOSE NUMBER OF POSTS 
+                  <input type="range" id="rngpost" oninput="inputRange()" min="3" max="50" value = "3">
+                  <input class="app__head-input-number" type="number" name="numberposts" id="numpost" value="3" min="1" max="50" required>
+                </span>
+                <span>
+                  CHOOSE NUMBER OF COMMENTS
+                  <input type="range" id="rngcomms" oninput="inputRng()" min="0" max="50">
+                  <input class="app__head-input-number" type="number" name="numbercomms" id="numcomms" min="0" max="50" value="0" required>
+                </span>
+                <span>
+                  <input type="submit" class="app__head-input-submit" value="Apply"> 
+                </span>
+              </form>
+            </div> 
         </div>
-      </div> 
-    </header>
+        
+        <div id="app" class="app__posts">
+          <h1>
+            THE MOST POPULAR POSTS ON REDDIT TODAY
+          </h1>
+          <div class="app__posts-block">
+            <ul id="listpost" class="app__posts-list">
+              <li class="app__posts-list-el"></li>
+              <li class="app__posts-list-el"></li>
+              <li class="app__posts-list-el"></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="app__footer"> 
+            <span>© 2022 RedditInfo</span>
+            <a href="https://www.reddit.com/" class="app__footer-icon"><img src="./img/Reddit-Logomark-Color-Logo.wine.svg" alt="logo-reddit" width="50px" height="50px"></a>
+        </div>
 
-    <script src="./js/app.js"></script>
-
-  </div>
-</body>
+        <script src="./js/app.js"></script>
+    </body>
 </html>
 

@@ -1,20 +1,52 @@
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+document.getElementById('myDate').valueAsDate = new Date();
+
+function myDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+function inputRange() {
+  let rangepost = document.getElementById('rngpost');
+  let numpost = document.getElementById('numpost');
+  numpost.value = rangepost.value;
+}
 
-    let dropdowns = document.getElementsByClassName("dropdown-content");
-    let i;
-    for (i = 0; i < dropdowns.length; i++) {
-      let openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+function inputRng() {
+  let rangecomms = document.getElementById('rngcomms');
+  let numcomms = document.getElementById('numcomms');
+  numcomms.value = rangecomms.value;
+}
+
+function getFormValue(event) {
+  event.preventDefault();     
+}
+
+function clearPosts() {
+  document.getElementById("listpost").innerHTML = "";
+}
+
+function addMorePosts(){
+  let forma = document.getElementById('myDropdown');
+  forma.addEventListener('submit', getFormValue);
+  
+  const data = document.querySelector('[name = "data"]'),
+        posts = document.querySelector('[name = "numberposts"]'),
+        comms = document.querySelector('[name = "numbercomms"]');
+
+  return {
+    data: data.value,
+    posts: posts.value,
+    comms: comms.value
   }
-} 
+}
+
+function addPosts(){
+  clearPosts();
+  const a = addMorePosts();
+  for (let i = 0; i < a.posts; i++){
+    let listel = document.createElement('li');
+    listel.className = "app__posts-list-el";
+    listpost.append(listel);
+  }   
+  console.log(addMorePosts());
+}
+
