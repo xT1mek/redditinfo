@@ -27,6 +27,7 @@ html {
     box-shadow: 1px 2px 6px 0px #777;
     position: fixed;
     width: 100%;
+    z-index: 2;
 }
 
 .app_head-banner {
@@ -99,7 +100,8 @@ h3 {
 }
 
 .show {
-    display:block; }
+    display:block;
+}
 
 .app__head-date-input {
     display: flex;
@@ -159,13 +161,28 @@ input::-webkit-inner-spin-button {
     transform: scale(1.05);
 }
 
+label{
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.post-type{
+    font-weight: 600;
+    color: brown;
+    margin-left: 20px;
+    border: 0;
+    background-color: white;
+    width: 70px;
+    height: 40px;
+    border-radius: 7px;
+}
+
+
 /* Main */
 
 h1 {
     color: brown;
     margin-top: 50px;
-    padding-left: auto;
-    padding-right: auto;
 }
 
 .app__posts {
@@ -178,9 +195,8 @@ h1 {
 .app__posts-block {
     width: 100%;
     margin-right: auto;
-    min-height: 800px;
     margin-bottom: 50px;
-    margin-top: 50px;
+    margin-top: 90px;
 }
 
 .app__posts-list {
@@ -190,18 +206,51 @@ h1 {
     flex-wrap: wrap;
 }
 
-.app__posts-list-el {
-    width: 500px;
-    height: 500px;
-    border: 2px solid brown;
-    box-shadow: 5px 5px 5px brown;
-}
-
-.app__posts-list-el:not(:last-child) {
-    margin-right: 20px;
+.app__posts-list-post{
+    width: 70%;
+    height: auto;
+    display: block;
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px white;
+    text-decoration: none;
 }
 
+.app__posts-list-post-author {
+    font-style: italic;
+    font-size: 18px;
+    color: grey;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+  
+.app__posts-list-post-title { 
+    font-weight: 900;
+    font-size: 30px;
+    color: white; 
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.app__posts-list-post-content{
+    color: rgb(214, 200, 200);
+    margin-left: 10px;
+}
+  
+.app__posts-list-post-content span { color: rgb(230, 169, 169); }
+
+
+.app__posts-list-post-image{
+    margin-bottom: 30px;
+    margin-left: 10px;
+
+}
 /* Footer */
 
 .app__footer {

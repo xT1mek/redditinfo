@@ -10,7 +10,7 @@
     <title>Reddit Info</title>
 </head>
 
-    <body class="app">
+    <body class="app" id="bdy">
         <div class="app__head">
             <h3>
               <font color="white">▍
@@ -23,14 +23,10 @@
               <button onclick="myDropdown()" class="app__head-dropbtn"> 
                 <img src="./img/filter.png" alt="filter" width="15px" height="15px"> Filters
               </button>
-              <form autocomplete="on" name="filter-form" target="_blank" id="myDropdown" class="js-dropdown-content" onsubmit="addPosts(); return false">
-                <span>
-                  CHOOSE DATE
-                  <input class="app__head-date-input" id="myDate" name="data" type="date" required>
-                 </span>
+              <form autocomplete="on" name="filter-form" target="_blank" id="myDropdown" class="js-dropdown-content" onsubmit="renderPosts(); return false">
                 <span>
                   CHOOSE NUMBER OF POSTS 
-                  <input type="range" id="rngpost" oninput="inputRange()" min="3" max="50" value = "3">
+                  <input type="range" id="rngpost" oninput="inputRange()" min="3" max="25" value = "3">
                   <input class="app__head-input-number" type="number" name="numberposts" id="numpost" value="3" min="1" max="50" required>
                 </span>
                 <span>
@@ -42,6 +38,7 @@
                   <input type="submit" class="app__head-input-submit" value="Apply"> 
                 </span>
               </form>
+         
             </div> 
         </div>
         
@@ -50,11 +47,9 @@
             THE MOST POPULAR POSTS ON REDDIT TODAY
           </h1>
           <div class="app__posts-block">
-            <ul id="listpost" class="app__posts-list">
-              <li class="app__posts-list-el"></li>
-              <li class="app__posts-list-el"></li>
-              <li class="app__posts-list-el"></li>
-            </ul>
+            <div id="listpost" class="app__posts-list">
+
+            </div>
           </div>
         </div>
         
