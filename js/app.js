@@ -8,12 +8,6 @@ function inputRange() {
   numpost.value = rangepost.value;
 }
 
-function inputRng() {
-  let rangecomms = document.getElementById('rngcomms');
-  let numcomms = document.getElementById('numcomms');
-  numcomms.value = rangecomms.value;
-}
-
 function getFormValue(event) {
   event.preventDefault();     
 }
@@ -23,13 +17,22 @@ function clearPosts() {
 }
 
 const blok = document.querySelector(".app__posts-list");
-const posttype = document.querySelector(".post-type");
+const dropdown = document.querySelector(".app__posts-list-post-type");
+    
+function postTypeChoose(){
+  let index = dropdown.selectedIndex;
+  let value = dropdown.options[index].value;
 
-const renderPosts = () => {
-  fetch(`https://www.reddit.com/top.json`)
+  renderPosts(value);
+}
+
+const renderPosts = (postType) => {
+  fetch(`https://www.reddit.com/${postType}.json`)
+
     .then(function(res) {
       return res.json();
     })
+
     .then(function(res) {
       let currPost, markup = ``;
       const postsArr = res.data.children;
@@ -50,12 +53,12 @@ const renderPosts = () => {
             <div class="app__posts-list-post-author"> Posted by ${currPost.author} </div>
           </a>`;
       }
-      
       blok.insertAdjacentHTML('afterbegin', markup);
     })
+
     .catch(function(err) {
       console.log(err); 
     });
-    
 };
- renderPosts('top')
+
+renderPosts('hot')

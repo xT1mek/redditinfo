@@ -10,7 +10,7 @@
     <title>Reddit Info</title>
 </head>
 
-    <body class="app" id="bdy">
+    <body class="app">
         <div class="app__head">
             <h3>
               <font color="white">▍
@@ -23,22 +23,26 @@
               <button onclick="myDropdown()" class="app__head-dropbtn"> 
                 <img src="./img/filter.png" alt="filter" width="15px" height="15px"> Filters
               </button>
+
               <form autocomplete="on" name="filter-form" target="_blank" id="myDropdown" class="js-dropdown-content" onsubmit="renderPosts(); return false">
+                <span>
+                  <label>Post Type:</label>
+                  <select class="app__posts-list-post-type">:
+                    <option value="hot" selected>Hot</option>
+                    <option value="new">New</option>
+                    <option value="top">Top</option>
+                  </select>  
+                </span>
                 <span>
                   CHOOSE NUMBER OF POSTS 
                   <input type="range" id="rngpost" oninput="inputRange()" min="3" max="25" value = "3">
                   <input class="app__head-input-number" type="number" name="numberposts" id="numpost" value="3" min="1" max="50" required>
                 </span>
                 <span>
-                  CHOOSE NUMBER OF COMMENTS
-                  <input type="range" id="rngcomms" oninput="inputRng()" min="0" max="50">
-                  <input class="app__head-input-number" type="number" name="numbercomms" id="numcomms" min="0" max="50" value="0" required>
-                </span>
-                <span>
-                  <input type="submit" class="app__head-input-submit" value="Apply"> 
+                  <input type="submit" class="app__head-input-submit" value="Apply" onclick="postTypeChoose()"> 
                 </span>
               </form>
-         
+
             </div> 
         </div>
         
@@ -59,6 +63,6 @@
         </div>
 
         <script src="./js/app.js"></script>
+
     </body>
 </html>
-

@@ -30,7 +30,7 @@ html {
     z-index: 2;
 }
 
-.app_head-banner {
+.app__head-banner {
     text-decoration: none;
     color: #fff;
 }
@@ -103,21 +103,6 @@ h3 {
     display:block;
 }
 
-.app__head-date-input {
-    display: flex;
-    margin-top: 15px;
-    border: 0;
-    background-color: inherit;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-.app__head-date-input:active, :focus {
-    background-color: brown;
-    color: white;
-    transform: scale(1.1);
-}
-
 .app__head-input-number {
     width: 40px;
     background-color: inherit;
@@ -163,24 +148,23 @@ input::-webkit-inner-spin-button {
 
 label{
     font-weight: bold;
-    margin-left: 50px;
+    margin-right: 15px;
 }
 
-.post-type{
+.app__posts-list-post-type{
     font-weight: 600;
     color: brown;
-    margin-left: 20px;
     border: 0;
     background-color: white;
-    width: 70px;
     height: 40px;
     border-radius: 7px;
+    margin-left: auto;
 }
 
 
 /* Main */
 
-h1 {
+h1{
     color: brown;
     margin-top: 50px;
 }
@@ -217,7 +201,7 @@ h1 {
     margin-right: auto;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px white;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -249,8 +233,20 @@ h1 {
 .app__posts-list-post-image{
     margin-bottom: 30px;
     margin-left: 10px;
-
 }
+
+.option {
+    width: 165px;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+
+  select {
+    width: 75px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
 /* Footer */
 
 .app__footer {
@@ -273,3 +269,5 @@ h1 {
     background-color: gray;
     transform: scale(1);
 }
+
+
