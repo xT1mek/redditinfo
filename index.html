@@ -9,25 +9,20 @@
 
     <title>Reddit Info</title>
 </head>
-
     <body class="app">
         <div class="app__head">
-            <h3>
-              <font color="white">▍
-                <a class="app__head-banner">
-                   Reddit Info
-                </a>
-              </font>
-            </h3>
+            <span class="app__head-logo">
+              ▍Reddit Info
+            </span>      
             <div class="app__head-dropdown">
-              <button onclick="myDropdown()" class="app__head-dropbtn"> 
+              <button onclick="toggleForm()" class="app__head-dropbtn"> 
                 <img src="./img/filter.png" alt="filter" width="15px" height="15px"> Filters
               </button>
 
-              <form autocomplete="on" name="filter-form" target="_blank" id="myDropdown" class="js-dropdown-content" onsubmit="renderPosts(); return false">
+              <form autocomplete="on" name="filter-form" target="_blank" id="my-dropdown" class="js-dropdown-content" onsubmit="renderPosts(); return false">
                 <span>
                   <label>Post Type:</label>
-                  <select class="app__posts-list-post-type">:
+                  <select class="app__post-type">:
                     <option value="hot" selected>Hot</option>
                     <option value="new">New</option>
                     <option value="top">Top</option>
@@ -35,8 +30,8 @@
                 </span>
                 <span>
                   CHOOSE NUMBER OF POSTS 
-                  <input type="range" id="rngpost" oninput="inputRange()" min="3" max="25" value = "3">
-                  <input class="app__head-input-number" type="number" name="numberposts" id="numpost" value="3" min="1" max="50" required>
+                  <input type="range" id="rng-post" oninput="inputRange()" min="3" max="25" value = "3">
+                  <input class="app__head-input-number" type="number" name="numberposts" id="num-post" value="3" min="1" max="50" required>
                 </span>
                 <span>
                   <input type="submit" class="app__head-input-submit" value="Apply" onclick="postTypeChoose()"> 
@@ -51,9 +46,7 @@
             THE MOST POPULAR POSTS ON REDDIT TODAY
           </h1>
           <div class="app__posts-block">
-            <div id="listpost" class="app__posts-list">
-
-            </div>
+            <div id="list-post" class="app__posts-list" />
           </div>
         </div>
         
@@ -63,6 +56,5 @@
         </div>
 
         <script src="./js/app.js"></script>
-
     </body>
 </html>
